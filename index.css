@@ -1,0 +1,128 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html, body, .main{
+    min-height: 100% !important;
+    height: 100%;
+}
+
+body{
+    background-color:#000;
+}
+
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    font-size:13px;
+    color:lime;
+    margin:auto;
+    display:none;
+    border-style:dotted;
+    padding:10px;
+}
+
+#table th{
+    text-align:left;
+}
+
+#table td:nth-child(odd) {
+    font-weight:1000;
+}
+
+#table td:nth-child(even) {
+    font-weight:500;
+}
+
+#main{
+    height:100%;
+    width:100%;
+    background-color:#000;
+    overflow-y:scroll;
+    color:lime;
+    font-size:10px;
+    padding:10px 0 0 10px;
+}
+
+#animation{
+    display:none;
+}
+
+pre{
+    color:red;
+    font-size:13px;
+    margin-left:20px;
+}
+
+#code{
+    display:none;
+}
+
+#line2{
+    display:none;
+}
+
+#code2{
+    display:none;    
+}
+
+.red{
+    color:red;
+}
+.blue{
+    color:dodgerblue;
+}
+.white{
+    color:white;
+}
+
+.progress,.progress1{
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: none;
+  height: 40px;
+  width: 100%;
+}
+
+#progress{
+    display:none;
+}
+
+.progress-value {
+  animation: load 3s normal forwards;
+  transition-delay:3s;
+  box-shadow: 0 10px 40px -10px lime;
+  border-radius: 100px;
+  background: lime;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.swal-overlay {
+  background-color: rgba(43, 165, 137, 0.45);
+}
+
+.swal-modal {
+  background-color: #343434;
+}
+
+.swal-button {
+  padding: 7px 19px;
+  border-radius: 2px;
+  font-size: 12px;
+  border: 1px solid #3e549a;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
