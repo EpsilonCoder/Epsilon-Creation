@@ -3,6 +3,7 @@
 
 <head>
     <title>EpsilonCoder</title>
+    <link rel="stylesheet" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -31,7 +32,7 @@
 # \______|\__| \______/ \______|\________| \______/ \__| \__|
                                                                    
 
-       </pre>
+  </pre>
     <table id="table"></table>
     <canvas id="animation"></canvas>
     <div id="main">
@@ -73,83 +74,7 @@
                     </div>
         </p>
     </div>
-    <script>
-
-        globalThis.time = 0;
-
-        window.addEventListener('click', function () {
-
-            var audio = document.getElementById("myAudio");
-            audio.play()
-        });
-        function timing() {
-            if (time == 2) {
-                document.getElementById('line2').style.display = 'block';
-            }
-            else if (time == 3) {
-
-                document.getElementById('code2').style.display = 'block';
-                document.getElementById('progress').style.display = 'flex';
-            }
-            else if (time == 5) {
-                document.getElementById('main').style.display = 'none';
-                document.getElementById('animation').style.display = 'block';
-            }
-            else if (time == 8) {
-                Animation()
-            }
-            else if (time == 12) {
-                document.getElementById('animation').style.display = 'none';
-                var audio = document.getElementById("myAudio");
-                audio.muted = true;
-                document.getElementById("myAudio").autoplay = false;
-                document.body.style.background = "#000";
-                document.getElementById('table').style.display = 'block';
-            }
-            else {
-
-            }
-            time++;
-        }
-        setInterval(timing, 1000);
-        function Animation() {
-            hacker = document.getElementById('animation');
-            const s = window.screen;
-            const w = (hacker.width = s.width);
-            const h = (hacker.height = (s.height - 150));
-            const ctx = hacker.getContext("2d");
-            const p = Array(Math.floor(w / 10) + 1).fill(0);
-            const random = (items) => items[Math.floor(Math.random() * items.length)];
-            const hex = "0123456789ABCDEFG".split("");
-
-            setInterval(() => {
-                ctx.fillStyle = "rgba(0, 0, 0, .01)";
-                ctx.fillRect(0, 0, w, h);
-                ctx.fillStyle = "lime";
-                p.map((v, i) => {
-                    ctx.fillText(random(hex), i * 10, v);
-                    p[i] = v >= h || v > 50 + 10000 * Math.random() ? 0 : v + 10;
-                });
-
-            }, 1000 / 30);
-        }
-        i = 0;
-        var txt = 'netcat hacking.cpp';
-        speed = 50;
-        window.onload = function typeWriter() {
-            if (i < txt.length) {
-                document.getElementById("line1").innerHTML += txt.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            }
-            else {
-                document.getElementById('code').style.display = 'block';
-                document.getElementsByClassName('progress')[0].style.display = 'flex';
-            }
-        };
-
-
-    </script>
+    <script src="script.js"></script>
     <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </body>
 
